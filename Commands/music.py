@@ -80,7 +80,6 @@ class Music(commands.Cog):
         if len(self.queue) > 0:
             self.is_playing = True
             m_url = self.queue[0][0]['source']
-            self.music_embed(ctx)
             self.queue.pop(0)
             self.vc.play(discord.FFmpegPCMAudio(m_url, **self.FFMPEG_OPTIONS))
             self.async_play(ctx)
